@@ -15,3 +15,100 @@ body {
   background-color: wheat;
   text-align: center;
 }
+#level-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} /* This made the grib with 2 columns making 1 item in each box*/
+#level-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} /*This made the grid with 2 columns which pushed every item into a box*/
+#level-2 .peas {
+  grid-column: 1/-1;
+} /*This is Targeting level 2 grid by saying I want the first column to stretch pass the last column*/
+#level-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} /*Since this level is 3 rows due to the columns expanding we put the grid-template-columns as 3 to make
+the rows stretch over. */
+#level-3 .onions {
+  grid-column: 2 / span 2;
+} /*The onion is spanning over 2 rows with it being the 2 column */
+#level-3 .tomatoes {
+  grid-column: 1 / span 2;
+} /*Tomatoes are spanning two rows over from the first column so */
+#level-3 .carrots {
+  grid-column: 1/-1;
+} /*This is streching the 1st column over to the last column in the grid*/
+#level-4 {
+  display: grid;
+  grid-template-rows: repeat(4 1fr);
+}
+#level-4 .peas {
+  grid-column: 1 / span 2;
+} /*This is basically telling me where the peas is going in the 4 by 4 grid by the parent 
+    Its saying it needs to go to the 1st column and span over 2 rows */
+#level-4 .onions {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+}
+#level-4 .carrots {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 2;
+} /*This means that its in the 4th column and spanning over 1 column */
+#level-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+} /* This made it to where we have 5 columns and 3 rows to move the items around to make it look like the picture*/
+#level-5 .carrots {
+  grid-area: 1 / 1 / span 3 / span 1;
+} /* This means that the carrot starts at row 1 and column 1 and the row ends at 3 and the column ends at 1*/
+#level-5 .onions {
+  grid-area: 1 / 3 / span 2 / span 1;
+} /* this made it to start in row 1/ start in column 3/ span to the 2nd row/ span the only 1 column*/
+#level-5 .lettuce {
+  grid-area: 1 / 5 / span 1 / span 1;
+} /* lettuce started off in row 1/column 5/stayed in 1 column and 1 row*/
+#level-5 .peas {
+  grid-area: 2 / 4 / span 1 / span 2;
+} /*Peas started off in row 2/column 4 /stayed in 1 row and spanned over to 2 columns*/
+#level-5 .tomatoes {
+  grid-area: 3 / 2 / span 1 / span 3;
+} /* Start off in row 3/ start in column 2 to span over in the (1) same row for 3 columns */
+#level-6 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+#level-6 .carrots {
+  grid-area: 1 / 1 / span 1 / span 5;
+} /* Carrots started in row 1/started in column 1/stayed in 1 row then spanned over to 5th column*/
+#level-6 .onions {
+  grid-area: 2 / 1 / span 2 / span 1;
+} /* Onion started in row 2/started in column 1/spanned down 2 rows and stayed in the same column*/
+#level-6 .peas {
+  grid-area: 2 / 2 / span 2 / span 3;
+} /* Peas started in row 2/ column 2 then spanned to 2 rows and over 3 columns*/
+#level-6 .lettuce {
+  grid-area: 4 / 1 / span 1 / span 5;
+}
+#level-6 .tomatoes {
+  grid-area: 2 / 5 / span 2 / span 1;
+}
+#level-7 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(5ch, 1fr));
+} /* This means that its 5 columns but the size column has a minimax view of 5ch per 1fr.*/
+#level-8 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15ch);
+  grid-auto-rows: 5ch;
+} /* This means that its going to use the repeat property to auto fit the size 15ch whenever the viewpoint is adjusted.
+and the row size is 5ch.*/
+#level-9 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit minmax(5rem, 1fr));
+  grid-auto-rows: 5rem;
+} /* Ok so this using the repeat property with the auto-fit inside the inside the repeat property add the minimax property inside 
+its own quote marks the end it with the main quotemark*/
